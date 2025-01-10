@@ -8,46 +8,41 @@ declare module "next-auth" {
    * or the second parameter of the `session` callback, when using a database.
    */
   interface User extends DatabaseFields {
-    token: string;
-    username: string;
-    email: string;
-    firstName: string;
-    lastName: string;
-    fullName: string;
-    role: string;
-    photo?: string;
-    blocked: boolean;
-    id: string;
+    _id: string,
+    username: string,
+    firstName:string,
+    lastName: string,
+    email: string,
+    phone: string,
+    role: string,
+    isVerified: boolean,
   }
 
   /**
    * Returned by `useSession`, `getSession` and received as a prop on the `SessionProvider` React Context
    */
   interface Session {
-    username: string;
-    email: string;
-    firstName: string;
-    lastName: string;
-    fullName: string;
-    role: string;
-    photo?: string;
-    blocked: boolean;
-    id: string;
+    _id: string,
+    username: string,
+    firstName:string,
+    lastName: string,
+    email: string,
+    phone: string,
+    role: string,
+    isVerified: boolean,
   }
 }
 
 declare module "next-auth/jwt" {
   /** Returned by the `jwt` callback and `getToken`, when using JWT sessions */
   interface JWT {
-    token: string;
-    username: string;
-    email: string;
-    firstName: string;
-    lastName: string;
-    fullName: string;
-    role: string;
-    photo?: string;
-    blocked: boolean;
-    id: string;
+    _id: string,
+    username: string,
+    firstName:string,
+    lastName: string,
+    email: string,
+    phone: string,
+    role: string,
+    isVerified: boolean,
   }
 }

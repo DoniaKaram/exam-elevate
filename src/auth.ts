@@ -1,9 +1,8 @@
 import { NextAuthOptions } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import { JSON_HEADER } from "./lib/constants/api.constant";
-import AppError from "./lib/utils/app-error";
 import { cookies } from "next/headers";
-
+import AppError from "./lib/utils/app-error";
 export const authOptions: NextAuthOptions = {
   pages: {
     signIn: "/auth/login",
@@ -52,16 +51,14 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     jwt: ({ token, user }) => {
       if (user) {
-        token.token = user.token;
+        token._id = user._id;
         token.username = user.username;
         token.email = user.email;
         token.firstName = user.firstName;
         token.lastName = user.lastName;
-        token.fullName = user.fullName;
         token.role = user.role;
-        token.photo = user.photo;
-        token.blocked = user.blocked;
-        token.id = user.id;
+        token.phone = user.phone;
+        token.isVerified = user.isVerified;
       }
 
       return token;
@@ -71,11 +68,11 @@ export const authOptions: NextAuthOptions = {
       session.email = token.email;
       session.firstName = token.firstName;
       session.lastName = token.lastName;
-      session.fullName = token.fullName;
+      session._id = token._id;
       session.role = token.role;
-      session.photo = token.photo;
-      session.blocked = token.blocked;
-      session.id = token.id;
+      session.phone = token.phone;
+      session.isVerified = token.isVerified;
+   
 
       return session;
     },

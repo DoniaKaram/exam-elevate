@@ -1,14 +1,14 @@
 declare type User = {
    
-    username: string;
-    email: string;
-    firstName: string;
-    lastName: string;
-    fullName: string;
-    role: string;
-    photo?: string;
-    blocked: boolean;
-    id: string;
+       _id: string,
+        username: string,
+        firstName:string,
+        lastName: string,
+        email: string,
+        phone: string,
+        role: string,
+        isVerified: boolean,
+        
   } & DatabaseFields;
   
   declare type LoginResponse = {
