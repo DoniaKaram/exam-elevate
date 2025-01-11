@@ -3,17 +3,12 @@ declare type DatabaseFields={
     createdAt:string
 }
 declare type SuccessfulResponse<T>={
-    status:"success",
-    statusCode:number,
-   data:T
-}
-declare type ValidationeError={
-   field:string,
-   errorMessage:string
-}
+    message:"success",
+} & T;
+
 declare type ErrorResponse={
-    status:"error",
-    statusCode:number,
-   message:string|ValidationeError
+    message:string,
+    code:number,
+ 
 }
 declare type APIResponse<T>=SuccessfulResponse<T>|ErrorResponse;

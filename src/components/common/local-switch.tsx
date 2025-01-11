@@ -22,10 +22,10 @@ function LocalSwitch() {
     <div className="flex justify-center items-center gap-7">
      <DropdownMenu>
      <DropdownMenuTrigger >
-      <Button>  
+      
       English
     
-      </Button>
+     
       </DropdownMenuTrigger>
   <DropdownMenuContent>
   <DropdownMenuItem asChild>

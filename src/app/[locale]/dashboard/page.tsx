@@ -1,11 +1,12 @@
-import React from 'react';
-
-function Page() {
-  return (
-    <div>
-     dashboard
-    </div>
-  );
+import Subjects from "./subjects/subjects-card";
+ function Page() {
+  
+ 
+ 
+   <Subjects/>
+    
+    
+ 
 }
 
 export default Page;

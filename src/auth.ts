@@ -5,21 +5,21 @@ import { cookies } from "next/headers";
 import AppError from "./lib/utils/app-error";
 export const authOptions: NextAuthOptions = {
   pages: {
-    signIn: "/auth/login",
-    error: "/auth/login",
+    signIn: "auth/login",
+    error: "auth/login",
   },
   providers: [
     Credentials({
       name: "Credentials",
       credentials: {
-        username: {},
+        email: {},
         password: {},
       },
       authorize: async (credentials) => {
-        const response = await fetch(`${process.env.API}/auth/signin`, {
+        const response = await fetch("https://exam.elevateegy.com/api/v1/auth/signin", {
           method: "POST",
           body: JSON.stringify({
-            username: credentials?.username,
+            email: credentials?.email,
             password: credentials?.password,
           }),
           headers: {
@@ -30,21 +30,22 @@ export const authOptions: NextAuthOptions = {
         const payload: APIResponse<LoginResponse> = await response.json();
 
         // If login was successful, return the user data alongside the token
-        if (payload.status === "success") {
+        if (!("code" in payload)) {
           // Save the token in cookies separately
-          cookies().set("e-commerce_token", payload.data.token, {
+          cookies().set("accessToken", payload.token, {
             httpOnly: true,
           });
 
           // Return user data alongside the token
           return {
-            token: payload.data.token,
-            ...payload.data.user,
+            id:payload.user._id,
+            accessToken: payload.token,
+            ...payload.user,
           };
         }
 
         // Otherwise, throw the error returned from the backend
-        throw new AppError(payload.message, payload.statusCode);
+        throw new AppError(payload.message, payload.code);
       },
     }),
   ],
@@ -59,6 +60,7 @@ export const authOptions: NextAuthOptions = {
         token.role = user.role;
         token.phone = user.phone;
         token.isVerified = user.isVerified;
+        token.accessToken=user.accessToken;
       }
 
       return token;

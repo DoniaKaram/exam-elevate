@@ -7,7 +7,7 @@ type AuthLayoutProp={
 export default function AuthLayout({children}:AuthLayoutProp){
     return(
         <main className="grid grid-cols-2 h-screen">
-            
+          
             <section className="bg-[#F0F4FC] flex flex-col justify-center rounded-tr-3xl rounded-br-3xl px-28">
               <h1 className='text-3xl py-2 font-bold'>
                 Welcome to<br/>
@@ -16,8 +16,7 @@ export default function AuthLayout({children}:AuthLayoutProp){
               <p className='py-5 font-bold'>Quidem autem voluptatibus qui quaerat aspernatur<br/>architecto natus</p>
               <Image src={Elevate_Pic} alt="" className='py-3'></Image>
             </section>
-            
-            {children}
+           {children}
         </main>
     );
 

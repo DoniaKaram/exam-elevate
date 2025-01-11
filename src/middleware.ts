@@ -21,8 +21,8 @@ const authMiddleware = withAuth(
       authorized: ({ token }) => token != null,
     },
     pages: {
-      signIn: "/auth/login",
-      error: "/auth/login",
+      signIn: "auth/login",
+      error: "auth/login",
     },
   }
 );

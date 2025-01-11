@@ -1,8 +1,6 @@
 "use client"
 import { Form, FormItem, FormMessage } from "@/components/ui/form";
-import { useRouter,usePathname } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
-import { useSearchParams } from "next/navigation";
 import {SubmitHandler, useForm} from "react-hook-form"
 import { FormField} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -16,14 +14,9 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { signIn } from "next-auth/react";
 function LoginForm() {
   const t=useTranslations();
-  const router=useRouter();
-  const pathname=usePathname();
-   const searchParams=useSearchParams();
    const [error,setError]=useState<string|null>(null);
-    const [loadig,isLoading]=useState(false);
-    
     const Schema=z.object({
-        email:z.string({required_error:t("email-required")}),
+        email:z.string({required_error:t("email-required")}).min(1,t("email-required")),
         password:z.string({required_error:t("password-required")}).min(1,t("password-required"))
     });
     type inputs=z.infer<typeof Schema>
@@ -36,16 +29,17 @@ function LoginForm() {
     })
    const onSubmit:SubmitHandler<inputs>=async(values)=>{
     setError(null)
-    isLoading(true)
+ 
    const response=await signIn('credentials',{
     ...values,
     redirect:false
    })
+   console.log(response);
    if(response?.ok){
-      router.replace(response.url||'/dashboard')
+     window.location.href=response.url||'/dashboard'
       return;
    }
-   isLoading(false)
+  
    //setError(response?.error)//
    };
   return (

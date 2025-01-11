@@ -16,6 +16,7 @@ declare module "next-auth" {
     phone: string,
     role: string,
     isVerified: boolean,
+    accessToken:string,
   }
 
   /**
@@ -44,5 +45,6 @@ declare module "next-auth/jwt" {
     phone: string,
     role: string,
     isVerified: boolean,
+    accessToken:string,
   }
 }
