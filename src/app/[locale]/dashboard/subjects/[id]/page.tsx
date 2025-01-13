@@ -1,9 +1,9 @@
-import React from 'react';
-
+import ExamsCard from "../_components/exam-card";
 function Page() {
+  
   return (
     <div>
-      Page
+    <ExamsCard/>
     </div>
   );
 }

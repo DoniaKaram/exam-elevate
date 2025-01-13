@@ -1,9 +1,8 @@
-import ExamsCard from "../_components/exam-card"
+import Subjects from "./_components/subjects-card";
 function Page() {
-  
   return (
     <div>
-    <ExamsCard/>
+      <Subjects/>
     </div>
   );
 }
