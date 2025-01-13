@@ -1,11 +1,6 @@
-import React from 'react';
-
-function Layout() {
-  return (
-    <div>
-      Layout
-    </div>
-  );
+type DashboardLayoutProp={
+  children:React.ReactNode;
 }
-
-export default Layout;
+export default function DashboardLayout({children}:DashboardLayoutProp){
+      return children;
+}

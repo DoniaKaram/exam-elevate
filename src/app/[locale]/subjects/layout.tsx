@@ -1,9 +1,9 @@
-import SideNav from '../_components/side-nav';
+import SideNav from '../dashboard/_components/side-nav';
 import Nav from '@/components/common/nav';
-type DashboardLayoutProp={
+type SubjectsLayoutProp={
     children:React.ReactNode;
 }
-export default function DashboardLayout({children}:DashboardLayoutProp){
+export default function  SubjectsLayout({children}:SubjectsLayoutProp){
     return(
       <>
        <h1 className=" bg-[#4461F2] text-white text-center px-4 py-5 text-3xl font-bold">Dashboard</h1>
