@@ -3,7 +3,7 @@ function Page() {
   
   return (
     <div>
-     <ExamsCard/>
+    <ExamsCard/>
     </div>
   );
 }
