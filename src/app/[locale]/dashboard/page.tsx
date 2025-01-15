@@ -1,4 +1,4 @@
-import Subjects from "../subjects/_components/subjects-card";
+import Subjects from "./_components/subjects-card";
 function Page() {
   return (
     <div>
