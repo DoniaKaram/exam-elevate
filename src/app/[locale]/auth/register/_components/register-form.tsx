@@ -14,15 +14,14 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Link } from "lucide-react";
 function RegisterForm() {
   const t=useTranslations();
-   const [error,setError]=useState<string|null>(null);
     const Schema=z.object({
-        username:z.string({required_error:t("username-required")}).min(2,t("username-validation")),
-        firstName:z.string({required_error:t("password-required")}).min(1,t("password-validation")),
-        lastName:z.string({required_error:t("lastName-required")}).min(1,t("lastName-validation")),
-        email:z.string({required_error:t("email-required")}).min(1,t("email-validation")),
-        password:z.string({required_error:t("password-required")}).min(1,t("password-validation")),
-        rePassword:z.string({required_error:t("rePassword-required")}).min(1,t("rePassword-validation")),
-        phone:z.string({required_error:t("phone-required")}).min(1,t("phone-validation")),
+        username:z.string({required_error:t("username-required")}).min(2,t("username-min")),
+        firstName:z.string({required_error:t("password-required")}).min(1,t("password-invalid")),
+        lastName:z.string({required_error:t("lastname-required")}).min(1,t("lastname-min")),
+        email:z.string({required_error:t("email-required")}).min(1,t("email-invalid")),
+        password:z.string({required_error:t("password-required")}).min(1,t("password-invalid")),
+        rePassword:z.string({required_error:t("register-password-confirm")}).min(1,t("register-password-confirm")),
+        phone:z.string({required_error:t("phone-required")})
     });
     type inputs=z.infer<typeof Schema>
     const form = useForm<inputs>({
@@ -60,7 +59,7 @@ function RegisterForm() {
         control={form.control}
         render={({field})=><FormItem>
           
-          <Input  {...field} placeholder={t('first-name')}/>
+          <Input  {...field} placeholder={t('firstname-placeholder')}/>
           <FormMessage/>
         </FormItem>}
         />
@@ -69,7 +68,7 @@ function RegisterForm() {
         control={form.control}
         render={({field})=><FormItem>
          
-          <Input {...field} placeholder={t('lastName-placeholder')} />
+          <Input {...field} placeholder={t('register-lastname-placeholder')} />
           <FormMessage/>
         </FormItem>}
         />
@@ -96,7 +95,7 @@ function RegisterForm() {
         control={form.control}
         render={({field})=><FormItem>
          
-          <Input {...field} placeholder={t('rePassword-placeholder')} />
+          <Input {...field} placeholder={t('register-password-confirm-placeholder')} />
           <FormMessage/>
         </FormItem>}
         />
@@ -109,15 +108,13 @@ function RegisterForm() {
           <FormMessage/>
         </FormItem>}
         />
-        <a className="text-primary text-end">Already have an account?<Link href='/auth/login'>login</Link></a>
-        <Button className="rounded-full p-7">{t("Sign up")}</Button>
+        <a className="text-primary text-end">{t('register-login')}<Link href='/auth/login'>login</Link></a>
+        <Button className="rounded-full p-7 bg-primary">{t("Sign up")}</Button>
         <p className="text-center">Or Continue with</p>
-        <div className="flex justify-center items-center gap-">
+        <div className="flex justify-center items-center">
          <Image src={google_pic} alt="google-img"/>
         </div>
-        <div className="flex flex-col gap-2 mt-8">
-          <FeedbackMessage>{error}</FeedbackMessage>
-        </div>
+        
       </form>
 
     </Form>

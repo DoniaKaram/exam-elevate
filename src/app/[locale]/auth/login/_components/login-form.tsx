@@ -12,6 +12,7 @@ import Image from "next/image";
 import { z } from "zod";
 import { zodResolver } from '@hookform/resolvers/zod';
 import { signIn } from "next-auth/react";
+import Link from "next/link";
 function LoginForm() {
   const t=useTranslations();
    const [error,setError]=useState<string|null>(null);
@@ -64,9 +65,9 @@ function LoginForm() {
         </FormItem>}
         />
         
-        <a className="text-primary text-end">Recover Password?</a>
+        <Link href={'/auth/ForgetPassword'} className="text-primary text-end">Recover Password?</Link>
         
-        <Button className="rounded-full p-7">{t("Sign in")}</Button>
+        <Button className="rounded-full p-7 bg-primary">{t("Sign in")}</Button>
         <p className="text-center">Or Continue with</p>
         <div className="flex justify-center items-center gap-">
          <Image src={google_pic} alt="google-img"/>

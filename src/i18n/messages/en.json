@@ -12,6 +12,7 @@
     "password-required": "Password is required",
     "username-min": "Username must be at least 2 characters",
     "firstname-required": "First name is required",
+    "firstname-placeholder": "Enter your firstname",
     "firstname-min": "Your first name must be at least 2 characters",
     "lastname-required": "Last name is required",
     "lastname-min": "Your last name must be at least 2 characters",
@@ -29,9 +30,11 @@
     "register-password-confirm-placeholder": "Confirm your password",
     "register-submit": "Create an account",
     "login-register": "Don't have an account? <a>Create an account</a>",
-    "register-login": "Already have an account? <a>Login</a>",
+    "register-login": "Already have an account?",
     "password-confirm-mismatch": "Passwords must match",
     "register-success": "Your account has been created successfully!",
     "register-success-title": "Account created!",
-    "Register": "Create an account"
+    "Register": "Sign Up",
+    "phone-placeholder":"Enter your phone",
+    "phone-required":"Please Enter Your phone"
   }

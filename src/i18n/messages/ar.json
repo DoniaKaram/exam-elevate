@@ -10,6 +10,7 @@
     "password-required": "كلمة المرور مطلوبة",
     "username-placeholder": "أدخل اسم المستخدم الخاص بك",
     "username-min": "يجب أن يتكون اسم المستخدم من حرفين على الأقل",
+    "firstname-placeholder":"ادخل اسمك الاول",
     "firstname-required": "الاسم الأول مطلوب",
     "firstname-min": "يجب أن يتكون اسمك الأول من حرفين على الأقل",
     "lastname-required": "الاسم الأخير مطلوب",
@@ -29,5 +30,8 @@
     "password-confirm-mismatch": "يجب أن تتطابق كلمات المرور",
     "register-success": "لقد تم إنشاء حسابك بنجاح!",
     "register-success-title": "تم إنشاء الحساب!",
-    "Register": "إنشاء حساب"
+    "Register": "إنشاء حساب",
+    "phone-placeholder":"ادخل رقم هاتفك",
+    "phone-required":"يجب ادخال رقم هاتفك",
+    "register-login":"هل لديك حساب بالفعل؟"
   }

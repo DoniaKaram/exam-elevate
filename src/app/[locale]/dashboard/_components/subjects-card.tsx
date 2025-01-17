@@ -1,8 +1,8 @@
 "use client"
-
 import { useEffect ,useState} from "react";
 import Profile from "@/components/common/profile";
 import Link from "next/link";
+import Image from "next/image";
 export default  function Subjects(){
 
         const [subjects,setSubjects]=useState<Subject[]>([]);
@@ -31,7 +31,7 @@ export default  function Subjects(){
         {subjects?.map((subject)=>{
   
   return <Link href={`/dashboard/${subject._id}`} key={subject._id}><div key={subject._id}>
-        <img src={subject.icon} alt="exam_img" />
+        <Image src={subject.icon} alt="exam_img" />
         <div className="card-info bg-[#1935CA66] p-3 text-white ">
            <h3 className="font-bold">{subject.name}</h3>
            <p>Voluptatem aut</p>
