@@ -23,20 +23,25 @@ export default  function Subjects(){
          <div>
             <Profile></Profile>
          </div>
-        <div className="Catogries bg-white rounded border-gray-800 shadow-gray px-4 py-3 mt-10 me-10 shadow-gray-900">
+        <div className="Catogries bg-white rounded border-gray-800 shadow-gray-600 px-4 py-3 mt-10 me-10">
  <div  className="flex justify-between">
   <p className="bg-color">Quizes</p>
  </div>
         <div className="grid lg:grid-cols-3 sm:grid-cols-1 gap-10 ">
         {subjects?.map((subject)=>{
   
-  return <Link href={`/dashboard/${subject._id}`} key={subject._id}><div key={subject._id}>
-        <Image src={subject.icon} alt="exam_img" />
-        <div className="card-info bg-[#1935CA66] p-3 text-white ">
-           <h3 className="font-bold">{subject.name}</h3>
-           <p>Voluptatem aut</p>
-        </div>
-  </div></Link>
+  return <Link href={`/dashboard/${subject._id}`} key={subject._id}>
+  <div className="relative">
+    {/* Card info */}
+    <div className="absolute bottom-5  text-center w-full  bg-[#4461F2] bg-opacity-80 p-4 text-white">
+      <h2 className="text-lg font-bold">{subject.name}</h2>
+      <p className="text-sm ">Voluptatem aut</p>
+    </div>
+    
+    {/* Image */}
+    <img src={subject.icon} alt='subject' className="w-full h-auto" />
+  </div>
+</Link>
 })}
        </div>
        </div>

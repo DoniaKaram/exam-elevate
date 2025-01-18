@@ -65,9 +65,9 @@ function LoginForm() {
         </FormItem>}
         />
         
-        <Link href={'/auth/ForgetPassword'} className="text-primary text-end">Recover Password?</Link>
+        <Link href={'/auth/ForgetPassword'} className="text-[#4461F2] text-end">Recover Password?</Link>
         
-        <Button className="rounded-full p-7 bg-primary">{t("Sign in")}</Button>
+        <Button className="rounded-full p-7 bg-[#4461F2] text-white">{t("Sign in")}</Button>
         <p className="text-center">Or Continue with</p>
         <div className="flex justify-center items-center gap-">
          <Image src={google_pic} alt="google-img"/>

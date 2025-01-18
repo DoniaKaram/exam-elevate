@@ -108,8 +108,8 @@ function RegisterForm() {
           <FormMessage/>
         </FormItem>}
         />
-        <a className="text-primary text-end">{t('register-login')}<Link href='/auth/login'>login</Link></a>
-        <Button className="rounded-full p-7 bg-primary">{t("Sign up")}</Button>
+        <a className="text-[#4461F2] text-end">{t('register-login')}<Link href='/auth/login'>login</Link></a>
+        <Button className="rounded-full p-7 bg-[#4461F2] text-white">{t("Sign up")}</Button>
         <p className="text-center">Or Continue with</p>
         <div className="flex justify-center items-center">
          <Image src={google_pic} alt="google-img"/>

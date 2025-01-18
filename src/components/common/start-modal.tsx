@@ -37,7 +37,7 @@ export default function StartModal({ examId }: StartModalProps) {
                     </ul>
                     <button
                       onClick={startQuiz}
-                      className="text-white bg-blue-700 hover:bg-blue-800 px-4 py-2 rounded-lg"
+                      className="text-white bg-blue-700 hover:bg-blue-800 px-4 py-2 rounded-full w-full"
                     >
                       Start
                     </button>

@@ -36,8 +36,8 @@ function LocalSwitch() {
     </DropdownMenuItem>
   </DropdownMenuContent>
 </DropdownMenu>
-     <Button className="bg-white text-primary py-2 text-xl font-bold">sign in</Button>
-     <Button className="bg-white text-primary rounded-full py-2 border-solid border-2 border-gray-200">Register</Button>
+     <Button className="bg-white text-[#4461F2] py-2 text-xl font-bold">sign in</Button>
+     <Button className="bg-white text-[#4461F2] rounded-full py-2 border-solid border-2 border-gray-200">Register</Button>
     </div>
    
   

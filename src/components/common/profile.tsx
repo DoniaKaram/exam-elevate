@@ -5,7 +5,7 @@ import profilePic from '../../../public/assets/Frame 40 (1).png'
 function Profile() {
   return (
    
-    <div className="containr mx-auto profile grid grid-cols-4 mt-10 me-10 bg-white rounded border-gray-800 shadow-gray-900 px-4 py-3">
+    <div className="containr mx-auto profile grid grid-cols-4 mt-10 me-10 bg-[#FFFFFF] rounded border-gray-800 shadow-gray-500 px-4 py-3">
  <div className="image">
  
 <Image src={profilePic} alt="Elevate Logo"></Image>
